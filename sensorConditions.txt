@@ -1,0 +1,2 @@
+sensorid,temperature,humidity
+000,28,84

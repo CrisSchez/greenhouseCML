@@ -69,19 +69,19 @@ def controlFunc(args):
     try:
       temperatureT=data[data['sensorid']==int(sensorid)]['temperature'].values[0]
       humidityT=data[data['sensorid']==int(sensorid)]['humidity'].values[0]
-        except:
-            zone=sensorid[0]
-            temperatureZ=zonedata[zonedata['zoneid']==int(zone)]['temperature'].values[0]
-            humidityZ=zonedata[zonedata['zoneid']==int(zone)]['humidity'].values[0]
+    except:
+      zone=sensorid[0]
+      temperatureZ=zonedata[zonedata['zoneid']==int(zone)]['temperature'].values[0]
+      humidityZ=zonedata[zonedata['zoneid']==int(zone)]['humidity'].values[0]
             
            
-            with open('sensorConditions.txt', 'a') as file:
-                file.write('\n'+str(sensorid)+','+str(round(temperatureZ+np.random.uniform(-10,10,1)[0],2))+','+str(humidityZ+round(np.random.uniform(-15,10,1)[0],2)))
+      with open('sensorConditions.txt', 'a') as file:
+        file.write('\n'+str(sensorid)+','+str(round(temperatureZ+np.random.uniform(-10,10,1)[0],2))+','+str(humidityZ+round(np.random.uniform(-15,10,1)[0],2)))
                 
-            data = pd.read_csv('sensorConditions.txt', sep=",")
-            data.columns = ["sensorid", "temperature", "humidity"]
-            temperatureT=data[data['sensorid']==int(sensorid)]['temperature'].values[0]
-            humidityT=data[data['sensorid']==int(sensorid)]['humidity'].values[0]
+      data = pd.read_csv('sensorConditions.txt', sep=",")
+      data.columns = ["sensorid", "temperature", "humidity"]
+      temperatureT=data[data['sensorid']==int(sensorid)]['temperature'].values[0]
+      humidityT=data[data['sensorid']==int(sensorid)]['humidity'].values[0]
     
     pointTarget=[(temperatureT,humidityT)]
     point0=[(float(temperature), float(humidity))]

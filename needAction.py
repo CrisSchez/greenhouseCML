@@ -1,3 +1,6 @@
+import os
+os.system("pip install -r requirements.txt")
+
 import pandas as pd
 import requests
 import numpy as np

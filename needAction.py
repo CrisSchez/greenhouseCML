@@ -26,8 +26,6 @@ import xml.etree.ElementTree as ET
 import datetime
 import os
 import sys
-from pyspark.sql import SparkSession
-from pyspark.sql.types import *
 
 import os
 import sys

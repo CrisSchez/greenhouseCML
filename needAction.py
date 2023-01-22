@@ -257,9 +257,11 @@ valores=np.linspace(0,len(df.index),6)
 import bisect
 flecha=bisect.bisect_left(valores, a)
 
-gauge(labels=['CRITICAL','LOW','NOT GOOD','CARE','GOOD'], colors=['#ED1C24','#F18517','#FFCC00','#0063BF','#007A00'], arrow=flecha, title='Sensores defectuosos ='+str(len(dfAviso.index))) 
+gauge(labels=['CRITICAL','LOW','NOT GOOD','CARE','GOOD'], colors=['#ED1C24','#F18517','#FFCC00','#0063BF','#007A00'], arrow=flecha, title='Plants to check ='+str(len(dfAviso.index))) 
 plt.savefig('numSensors.png')
-print(dfAviso['sensorid'].values)
+print("Go to the greenhouse app to check which sensors require configuration and how to deploy it")
+
+#print(dfAviso['sensorid'].values)
     
 
   

@@ -64,7 +64,7 @@ IMPALA_PORT='443'
 #jdbc:impala://coordinator-ClouderaEssencesHue.dw-demo-cloudera-forum-cdp-env.djki-j7ns.cloudera.site:443/default;AuthMech=3;transportMode=http;httpPath=cliservice;ssl=1;UID=cristina.sanchez;PWD=PASSWORD
   
 def controlFunc(args):
-    sensorid=args["sensorid"]
+    sensorid=str(int(args["sensorid"]))
     temperature=float(args["temperature"])
     humidity=float(args["humidity"])
     try:

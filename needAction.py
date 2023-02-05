@@ -113,7 +113,7 @@ cursor = conn.cursor()
 # Execute using SQL
 
 #cursor.execute("drop table if exists lastTS;")
-cursor.execute("WITH added_row_number AS (SELECT *, ROW_NUMBER() OVER(PARTITION BY sensorid ORDER BY 'timestamp' DESC) AS row_number FROM greenhouse.greenhouse_sensor) SELECT  * FROM added_row_number WHERE row_number = 1;")
+cursor.execute("WITH added_row_number AS (SELECT *, ROW_NUMBER() OVER(PARTITION BY sensorid ORDER BY ts DESC) AS row_number FROM greenhouse.greenhouse_sensors_data) SELECT  * FROM added_row_number WHERE row_number = 1;")
 df=as_pandas(cursor)
 conn.close()
 
